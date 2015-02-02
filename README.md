@@ -15,32 +15,44 @@ file works out the ip address and sets it.
 
 First build the image:
 
-```docker build -t nimmaj/ripple-rest:v1 .
+```
+docker build -t nimmaj/ripple-rest:v1 .
+```
 
 ...you can change the name of the image to anything you fancy.
 
 To run:
 
-```docker run -d -P nimmaj/ripple-rest:v1
+```
+docker run -d -P nimmaj/ripple-rest:v1
+```
 
 The -P flag maps the ports automagically.  You could do this manually using -p.
 
 To find out what port you are mapped to:
 
-```docker ps
+```
+docker ps
+```
 
 You should see something like this in the ports column:
 
-```0.0.0.0:49155->5990/tcp
+```
+0.0.0.0:49155->5990/tcp
+```
 
 If you're on a mac you also need to work out what ip address the boot2docker image
 in virtual box is using:
 
-```boot2docker ip
+```
+boot2docker ip
+```
 
 If that returns 8.8.8.8 then you can connect to ripple-rest:
 
-```curl -k https://8.8.8.8:49155
+```
+curl -k https://8.8.8.8:49155
+```
 
 # todo
 
