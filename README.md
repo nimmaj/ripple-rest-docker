@@ -11,6 +11,20 @@ The only real bit of oddness is that we need to set the host to start.  Otherwis
 it will use localhost, which is a disaster to connect to.  So the startRippleRest.sh
 file works out the ip address and sets it.
 
+# docker-machine
+
+You could start by creating a docker machine called dev...
+
+```
+docker-machine create --driver virtualbox dev
+```
+
+and then setting all the env vars:
+
+```
+eval "$(docker-machine env dev)"
+```
+
 # to use...
 
 First build the image:
@@ -41,11 +55,10 @@ You should see something like this in the ports column:
 0.0.0.0:49155->5990/tcp
 ```
 
-If you're on a mac you also need to work out what ip address the boot2docker image
-in virtual box is using:
+If you're on a mac you also need to work out what ip address the docker-machine is using (presuming your docker-machine is called dev):
 
 ```
-boot2docker ip
+docker-machine ip dev
 ```
 
 If that returns 8.8.8.8 then you can connect to ripple-rest:
