@@ -3,9 +3,9 @@ MAINTAINER ben wyeth <ripple-rest@nimmaj.com>
 RUN apt-get update && apt-get -y install nodejs npm git
 RUN git clone https://github.com/ripple/ripple-rest.git
 RUN sudo ln -s /usr/bin/nodejs /usr/bin/node
-WORKDIR ripple-rest
+WORKDIR /ripple-rest/
 RUN npm install
-ADD config.json startRippleRest.sh ripple-rest/
+COPY config.json startRippleRest.sh /ripple-rest/
 RUN chmod +x startRippleRest.sh
 RUN mkdir certs
 RUN openssl genrsa -out ./certs/server.key 2048

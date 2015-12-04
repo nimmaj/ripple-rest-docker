@@ -66,6 +66,13 @@ If that returns 8.8.8.8 then you can connect to ripple-rest:
 ```
 curl -k https://8.8.8.8:49155
 ```
+# debugging
+
+I just found that the script didn't work with the new version of docker.  Needed to find out why the build didn't work.  What worked for me was to hash out the line that was hosed and the ones beyond, then to run the image, now built, with an interative shell to prove a theory.
+
+```
+docker run -i -t nimmaj/ripple-rest:v1 /bin/bash
+```
 
 # todo
 
