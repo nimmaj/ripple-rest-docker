@@ -1,3 +1,8 @@
+# BEWARE
+
+This is instructive for me in terms of docker, but ripple appear to have just
+frozen ripple-rest in favour of [this](https://github.com/ripple/ripple-lib).
+
 # ripple-rest-docker
 
 This set of files:
